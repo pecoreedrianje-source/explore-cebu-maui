@@ -25,11 +25,11 @@ jobs:
         run: dotnet restore CebuFinalApp.csproj
 
       - name: Build and Publish APK
-        run: dotnet publish CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
+        run: dotnet publish CebuFinalApp.csproj -f net10.0-android -c Release /p:CheckEolWorkloads=false
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ExploreCebu-Android-Build
           # This path is relative to the working-directory
-          path: bin/Release/net8.0-android/*-Signed.apk
+          path: bin/Release/net10.0-android/*-Signed.apk
