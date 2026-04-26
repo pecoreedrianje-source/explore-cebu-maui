@@ -4,7 +4,6 @@ on: [push]
 jobs:
   build:
     runs-on: windows-latest
-    # This forces GitHub to 'stay' in the folder where your code is
     defaults:
       run:
         working-directory: CebuFinalApp 
@@ -31,5 +30,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ExploreCebu-Android-Build
-          # This path is relative to the working-directory
-          path: bin/Release/net10.0-android/*-Signed.apk
+          # This tells GitHub to search all subfolders for any APK file
+          path: "**/*.apk"
