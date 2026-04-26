@@ -1,0 +1,56 @@
+<Shell
+    x:Class="CebuFinalApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CebuFinalApp"
+    Shell.TabBarBackgroundColor="White"
+    Shell.TabBarForegroundColor="#4FD1C5"
+    Shell.TabBarUnselectedColor="Gray"
+    Shell.TabBarTitleColor="#4FD1C5"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent 
+        Title="Login"
+        Route="LoginPage" 
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Shell.TabBarIsVisible="False"/>
+
+    <TabBar x:Name="MainTabBar" Route="Main">
+
+        <Tab Title="Explore">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="&#xf279;" Size="20" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Favorites">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="&#xf004;" Size="20" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:FavoritesPage}" Route="FavoritesPage" />
+        </Tab>
+
+        <Tab Title="Discover">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="&#xf002;" Size="20" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:DiscoverPage}" Route="DiscoverPage" />
+        </Tab>
+
+        <Tab Title="Tips">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="&#xf0eb;" Size="20" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:TipsPage}" Route="TipsPage" />
+        </Tab>
+
+        <Tab Title="Profile">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="&#xf007;" Size="20" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" Route="ProfilePage" />
+        </Tab>
+
+    </TabBar>
+</Shell>

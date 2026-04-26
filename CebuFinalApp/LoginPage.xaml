@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CebuFinalApp.LoginPage"
+             BackgroundColor="#F4F9F8"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <VerticalStackLayout Spacing="0">
+
+                <!-- ─── Hero Section ─────────────────────────────── -->
+                <Grid HeightRequest="320">
+
+                    <!-- ✅ BACKGROUND IMAGE -->
+                    <Image Source="cebu_bg.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.95" />
+
+                    <!-- Optional dark overlay for readability -->
+                    <BoxView BackgroundColor="#66000000" />
+
+                    <!-- Decorative wave -->
+                    <BoxView BackgroundColor="#F4F9F8"
+                             HeightRequest="40"
+                             VerticalOptions="End"
+                             CornerRadius="40,40,0,0" />
+
+                    <!-- Decorative circles -->
+                    <Ellipse Fill="#FFFFFF" WidthRequest="300" HeightRequest="300"
+                             HorizontalOptions="End" VerticalOptions="Start"
+                             Margin="0,-120,-80,0" Opacity="0.07"/>
+                    <Ellipse Fill="#FFFFFF" WidthRequest="180" HeightRequest="180"
+                             HorizontalOptions="Start" VerticalOptions="End"
+                             Margin="-60,0,0,60" Opacity="0.06"/>
+                    <Ellipse Fill="#FFFFFF" WidthRequest="80" HeightRequest="80"
+                             HorizontalOptions="End" VerticalOptions="End"
+                             Margin="0,0,40,80" Opacity="0.08"/>
+
+                    <!-- ✅ LOGO REMOVED -->
+                    <!-- Only text remains -->
+                    <VerticalStackLayout VerticalOptions="Center"
+                                         HorizontalOptions="Center"
+                                         Spacing="10"
+                                         Margin="0,0,0,30">
+
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                            <Label Text="ExploreCebu"
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   CharacterSpacing="1.5"/>
+                            <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
+                                <BoxView Color="#FFFFFF60" WidthRequest="30" HeightRequest="1.5" VerticalOptions="Center"/>
+                                <Label Text="Pearl of the Orient"
+                                       FontSize="12"
+                                       TextColor="#D1FAF8"
+                                       HorizontalOptions="Center" />
+                                <BoxView Color="#FFFFFF60" WidthRequest="30" HeightRequest="1.5" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </Grid>
+
+                <!-- ─── Login Card ───────────────────────────────── -->
+                <VerticalStackLayout Padding="22,0,22,30" Spacing="0" Margin="0,-20,0,0">
+
+                    <Frame Padding="24,26"
+                           CornerRadius="28"
+                           HasShadow="True"
+                           BorderColor="Transparent"
+                           BackgroundColor="White">
+                        <VerticalStackLayout Spacing="18">
+
+                            <!-- Header -->
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Welcome Back!"
+                                       FontSize="24"
+                                       FontAttributes="Bold"
+                                       TextColor="#2D3748" />
+                                <Label Text="Sign in to continue exploring Cebu"
+                                       FontSize="13"
+                                       TextColor="#A0AEC0"/>
+                            </VerticalStackLayout>
+
+                            <!-- Email Field -->
+                            <VerticalStackLayout Spacing="7">
+                                <Label Text="EMAIL ADDRESS" FontSize="11"
+                                       FontAttributes="Bold" TextColor="#718096"
+                                       CharacterSpacing="1.2"/>
+                                <Border StrokeShape="RoundRectangle 14"
+                                        BackgroundColor="#F7FAFC"
+                                        StrokeThickness="1.5"
+                                        Stroke="#E2E8F0"
+                                        HeightRequest="54">
+                                    <Grid ColumnDefinitions="Auto, *, Auto" Margin="16,0">
+                                        <Image Grid.Column="0"
+                                               Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf0e0;', Color='#4DBBB7', Size=15}"
+                                               VerticalOptions="Center"
+                                               Margin="0,0,12,0"/>
+                                        <Entry Grid.Column="1"
+                                               x:Name="EmailEntry"
+                                               Placeholder="your@email.com"
+                                               PlaceholderColor="#CBD5E0"
+                                               TextColor="#2D3748"
+                                               Keyboard="Email"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <!-- Password Field -->
+                            <VerticalStackLayout Spacing="7">
+                                <Label Text="PASSWORD" FontSize="11"
+                                       FontAttributes="Bold" TextColor="#718096"
+                                       CharacterSpacing="1.2"/>
+                                <Border StrokeShape="RoundRectangle 14"
+                                        BackgroundColor="#F7FAFC"
+                                        StrokeThickness="1.5"
+                                        Stroke="#E2E8F0"
+                                        HeightRequest="54">
+                                    <Grid ColumnDefinitions="Auto, *" Margin="16,0">
+                                        <Image Grid.Column="0"
+                                               Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf023;', Color='#4DBBB7', Size=15}"
+                                               VerticalOptions="Center"
+                                               Margin="0,0,12,0"/>
+                                        <Entry Grid.Column="1"
+                                               x:Name="PasswordEntry"
+                                               Placeholder="••••••••"
+                                               PlaceholderColor="#CBD5E0"
+                                               TextColor="#2D3748"
+                                               IsPassword="True"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <!-- Forgot Password -->
+                            <Label Text="Forgot Password?"
+                                   HorizontalOptions="End"
+                                   TextColor="#4DBBB7"
+                                   FontAttributes="Bold"
+                                   FontSize="13"
+                                   Margin="0,-6,0,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnRecoverPasswordClicked"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <!-- Sign In Button -->
+                            <Button Text="SIGN IN"
+                                    Clicked="OnLoginClicked"
+                                    BackgroundColor="#4DBBB7"
+                                    TextColor="White"
+                                    HeightRequest="56"
+                                    CornerRadius="16"
+                                    FontAttributes="Bold"
+                                    FontSize="15"
+                                    CharacterSpacing="1.5"
+                                    Margin="0,2,0,0"/>
+
+                            <ActivityIndicator x:Name="LoadingBus"
+                                               IsRunning="False"
+                                               Color="#4DBBB7"
+                                               HorizontalOptions="Center"
+                                               HeightRequest="20" />
+
+                            <!-- Divider -->
+                            <Grid ColumnDefinitions="*, Auto, *" Margin="0,2">
+                                <BoxView Grid.Column="0" Color="#E2E8F0"
+                                         HeightRequest="1" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="  or continue with  "
+                                       TextColor="#A0AEC0" FontSize="12" />
+                                <BoxView Grid.Column="2" Color="#E2E8F0"
+                                         HeightRequest="1" VerticalOptions="Center" />
+                            </Grid>
+
+                            <!-- Social Login -->
+                            <Grid ColumnDefinitions="*, *" ColumnSpacing="12">
+                                <Border Grid.Column="0"
+                                        StrokeShape="RoundRectangle 14"
+                                        Stroke="#E2E8F0"
+                                        StrokeThickness="1.5"
+                                        BackgroundColor="White"
+                                        HeightRequest="52">
+                                    <HorizontalStackLayout HorizontalOptions="Center"
+                                                           VerticalOptions="Center"
+                                                           Spacing="8">
+                                        <Image Source="google_icon.png"
+                                               HeightRequest="22" WidthRequest="22" />
+                                        <Label Text="Google" FontSize="13"
+                                               FontAttributes="Bold" TextColor="#4A5568"
+                                               VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnGoogleLoginClicked"/>
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                                <Border Grid.Column="1"
+                                        StrokeShape="RoundRectangle 14"
+                                        Stroke="#E2E8F0"
+                                        StrokeThickness="1.5"
+                                        BackgroundColor="White"
+                                        HeightRequest="52">
+                                    <HorizontalStackLayout HorizontalOptions="Center"
+                                                           VerticalOptions="Center"
+                                                           Spacing="8">
+                                        <Image Source="fb_icon.png"
+                                               HeightRequest="22" WidthRequest="22" />
+                                        <Label Text="Facebook" FontSize="13"
+                                               FontAttributes="Bold" TextColor="#4A5568"
+                                               VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnFacebookLoginClicked"/>
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </Grid>
+
+                            <!-- Register Link -->
+                            <HorizontalStackLayout HorizontalOptions="Center"
+                                                   Spacing="5" Margin="0,6,0,0">
+                                <Label Text="New here?" TextColor="#A0AEC0" FontSize="14"/>
+                                <Label Text="Create Account"
+                                       TextColor="#4DBBB7"
+                                       FontAttributes="Bold"
+                                       FontSize="14">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnRegisterClicked"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Terms -->
+                    <Label Text="By signing in you agree to our Terms &amp; Privacy Policy"
+                           FontSize="11"
+                           TextColor="#CBD5E0"
+                           HorizontalOptions="Center"
+                           Margin="0,16,0,10" />
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- ─── Register Overlay ─────────────────────────────────── -->
+        <Grid x:Name="RegOverlay" IsVisible="False"
+              BackgroundColor="#CC000000" Opacity="0">
+            <Frame BackgroundColor="White" CornerRadius="28"
+                   Margin="22" VerticalOptions="Center"
+                   Padding="26" HasShadow="True" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="18">
+
+                    <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                        <Label Text="Join the Adventure 🌴"
+                               FontSize="22" FontAttributes="Bold"
+                               HorizontalOptions="Center" TextColor="#2D3748"/>
+                        <Label Text="Create your free ExploreCebu account"
+                               FontSize="13" TextColor="#A0AEC0"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="EMAIL ADDRESS" FontSize="11"
+                               FontAttributes="Bold" TextColor="#718096"
+                               CharacterSpacing="1.2"/>
+                        <Border StrokeShape="RoundRectangle 14"
+                                Stroke="#E2E8F0" StrokeThickness="1.5"
+                                BackgroundColor="#F7FAFC" HeightRequest="54">
+                            <Grid ColumnDefinitions="Auto,*" Margin="16,0">
+                                <Image Grid.Column="0"
+                                       Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf0e0;', Color='#4DBBB7', Size=15}"
+                                       VerticalOptions="Center" Margin="0,0,12,0"/>
+                                <Entry Grid.Column="1" x:Name="RegEmail"
+                                       Placeholder="your@email.com"
+                                       PlaceholderColor="#CBD5E0"
+                                       TextColor="#2D3748"
+                                       Keyboard="Email"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="PASSWORD" FontSize="11"
+                               FontAttributes="Bold" TextColor="#718096"
+                               CharacterSpacing="1.2"/>
+                        <Border StrokeShape="RoundRectangle 14"
+                                Stroke="#E2E8F0" StrokeThickness="1.5"
+                                BackgroundColor="#F7FAFC" HeightRequest="54">
+                            <Grid ColumnDefinitions="Auto,*" Margin="16,0">
+                                <Image Grid.Column="0"
+                                       Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf023;', Color='#4DBBB7', Size=15}"
+                                       VerticalOptions="Center" Margin="0,0,12,0"/>
+                                <Entry Grid.Column="1" x:Name="RegPass"
+                                       Placeholder="Min. 6 characters"
+                                       PlaceholderColor="#CBD5E0"
+                                       TextColor="#2D3748"
+                                       IsPassword="True"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Button Text="GET STARTED 🚀"
+                            Clicked="OnSubmitRegistration"
+                            BackgroundColor="#4DBBB7"
+                            TextColor="White"
+                            HeightRequest="56"
+                            CornerRadius="16"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            CharacterSpacing="1"/>
+
+                    <Button Text="Already have an account? Sign In"
+                            Clicked="OnCancelRegistration"
+                            BackgroundColor="Transparent"
+                            TextColor="#A0AEC0"
+                            FontSize="13"/>
+
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+        <!-- ─── Recover Password Overlay ─────────────────────────── -->
+        <Grid x:Name="RecoverOverlay" IsVisible="False"
+              BackgroundColor="#CC000000" Opacity="0">
+            <Frame BackgroundColor="White" CornerRadius="28"
+                   Margin="22" VerticalOptions="Center"
+                   Padding="26" HasShadow="True" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="18">
+
+                    <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                        <Label Text="Reset Password 🔐"
+                               FontSize="22" FontAttributes="Bold"
+                               HorizontalOptions="Center" TextColor="#2D3748"/>
+                        <Label Text="We'll send a reset link to your email"
+                               FontSize="13" TextColor="#A0AEC0"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label Text="EMAIL ADDRESS" FontSize="11"
+                               FontAttributes="Bold" TextColor="#718096"
+                               CharacterSpacing="1.2"/>
+                        <Border StrokeShape="RoundRectangle 14"
+                                Stroke="#E2E8F0" StrokeThickness="1.5"
+                                BackgroundColor="#F7FAFC" HeightRequest="54">
+                            <Grid ColumnDefinitions="Auto,*" Margin="16,0">
+                                <Image Grid.Column="0"
+                                       Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf0e0;', Color='#4DBBB7', Size=15}"
+                                       VerticalOptions="Center" Margin="0,0,12,0"/>
+                                <Entry Grid.Column="1" x:Name="RecoverEmail"
+                                       Placeholder="your@email.com"
+                                       PlaceholderColor="#CBD5E0"
+                                       TextColor="#2D3748"
+                                       Keyboard="Email"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Button Text="SEND RESET LINK"
+                            Clicked="OnSendResetLink"
+                            BackgroundColor="#4DBBB7"
+                            TextColor="White"
+                            HeightRequest="56"
+                            CornerRadius="16"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            CharacterSpacing="1"/>
+
+                    <Button Text="Back to Sign In"
+                            Clicked="OnCancelRecover"
+                            BackgroundColor="Transparent"
+                            TextColor="#A0AEC0"
+                            FontSize="13"/>
+
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+    </Grid>
+</ContentPage>

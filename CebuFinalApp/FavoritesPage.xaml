@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CebuFinalApp"
+             x:Class="CebuFinalApp.FavoritesPage"
+             BackgroundColor="#F4F9F8">
+
+    <Grid RowDefinitions="Auto, *">
+        <VerticalStackLayout Padding="20" BackgroundColor="#4DBBB7">
+            <Label Text="My Favorites" FontSize="22" FontAttributes="Bold" TextColor="White" />
+        </VerticalStackLayout>
+
+        <CollectionView x:Name="FavsCollection" 
+                        Grid.Row="1"
+                        SelectionMode="None"
+                        EmptyView="Your favorites list is empty.">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="15,5" Padding="0" CornerRadius="12" HasShadow="False" BorderColor="Transparent">
+                        <Grid ColumnDefinitions="110, *, Auto" HeightRequest="100">
+                            <Image Source="{Binding ImageSource}" Aspect="AspectFill" />
+
+                            <VerticalStackLayout Grid.Column="1" Padding="12" VerticalOptions="Center">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="15" TextColor="#333333"/>
+                                <Label Text="{Binding Location}" FontSize="12" TextColor="Gray" />
+                            </VerticalStackLayout>
+
+                            <ImageButton Grid.Column="2"
+                                         Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf004;', Color='#E53E3E', Size=20}"
+                                         BackgroundColor="Transparent"
+                                         VerticalOptions="Center"
+                                         Margin="10"
+                                         CommandParameter="{Binding .}"
+                                         Clicked="OnRemoveFavoriteClicked" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

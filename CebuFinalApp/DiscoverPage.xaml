@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CebuFinalApp.DiscoverPage"
+             BackgroundColor="#F4F9F8">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*, Auto" Padding="15,0" BackgroundColor="#4DBBB7" HeightRequest="56">
+            <Label Text="Discover" FontSize="22" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf002;', Color='White', Size=20}" Grid.Column="1" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <Image Source="cebu_beach.jpg" HeightRequest="180" Aspect="AspectFill" Margin="-20,-20,-20,0" />
+
+                <VerticalStackLayout Spacing="2" Margin="0,5">
+                    <Label Text="Discover the Best of Cebu" FontSize="18" FontAttributes="Bold" TextColor="#333333" />
+                    <Label Text="Attractions, food, tips, and more" FontSize="13" TextColor="#718096" />
+                </VerticalStackLayout>
+
+                <!-- Category Buttons -->
+                <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="10">
+
+                    <!-- Spots -->
+                    <VerticalStackLayout Grid.Column="0" Spacing="8" Padding="5" BackgroundColor="Transparent">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Spots" />
+                        </VerticalStackLayout.GestureRecognizers>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.92" />
+                                            <Setter Property="BackgroundColor" Value="#D1E9E8" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="15" BackgroundColor="#4FD1C5"
+                               Padding="0" HasShadow="False" BorderColor="Transparent"
+                               HorizontalOptions="Center" InputTransparent="True">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf030;', Color='White', Size=24}"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Text="Spots" FontSize="11" HorizontalOptions="Center" TextColor="#4A5568" InputTransparent="True"/>
+                    </VerticalStackLayout>
+
+                    <!-- Food -->
+                    <VerticalStackLayout Grid.Column="1" Spacing="8" Padding="5" BackgroundColor="Transparent">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Food" />
+                        </VerticalStackLayout.GestureRecognizers>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.92" />
+                                            <Setter Property="BackgroundColor" Value="#FEEBC8" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="15" BackgroundColor="#F6AD55"
+                               Padding="0" HasShadow="False" BorderColor="Transparent"
+                               HorizontalOptions="Center" InputTransparent="True">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf2e7;', Color='White', Size=24}"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Text="Food" FontSize="11" HorizontalOptions="Center" TextColor="#4A5568" InputTransparent="True"/>
+                    </VerticalStackLayout>
+
+                    <!-- Hotels -->
+                    <VerticalStackLayout Grid.Column="2" Spacing="8" Padding="5" BackgroundColor="Transparent">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Hotels" />
+                        </VerticalStackLayout.GestureRecognizers>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.92" />
+                                            <Setter Property="BackgroundColor" Value="#E9D8FD" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="15" BackgroundColor="#9F7AEA"
+                               Padding="0" HasShadow="False" BorderColor="Transparent"
+                               HorizontalOptions="Center" InputTransparent="True">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf236;', Color='White', Size=24}"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Text="Hotels" FontSize="11" HorizontalOptions="Center" TextColor="#4A5568" InputTransparent="True"/>
+                    </VerticalStackLayout>
+
+                    <!-- Activities -->
+                    <VerticalStackLayout Grid.Column="3" Spacing="8" Padding="5" BackgroundColor="Transparent">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Activities" />
+                        </VerticalStackLayout.GestureRecognizers>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.92" />
+                                            <Setter Property="BackgroundColor" Value="#BEE3F8" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="15" BackgroundColor="#4299E1"
+                               Padding="0" HasShadow="False" BorderColor="Transparent"
+                               HorizontalOptions="Center" InputTransparent="True">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf1e3;', Color='White', Size=24}"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Text="Activities" FontSize="11" HorizontalOptions="Center" TextColor="#4A5568" InputTransparent="True"/>
+                    </VerticalStackLayout>
+
+                </Grid>
+
+                <!-- Section Header -->
+                <Grid ColumnDefinitions="*, Auto" Margin="0,10,0,0">
+                    <Label Text="Popular Near You" FontSize="18" FontAttributes="Bold" TextColor="#333333" />
+                    <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="View all >" FontSize="13" TextColor="#4FD1C5" />
+                        <ActivityIndicator x:Name="LoadingIcon" IsRunning="False" Color="#4FD1C5"
+                                           HeightRequest="15" Margin="5,0,0,0"/>
+                    </HorizontalStackLayout>
+                </Grid>
+
+                <!-- Places Grid -->
+                <CollectionView x:Name="PopularPlacesView" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2"
+                                         HorizontalItemSpacing="15" VerticalItemSpacing="15" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="12" Padding="0" HasShadow="False"
+                                   IsClippedToBounds="True" BorderColor="Transparent"
+                                   BackgroundColor="White" Margin="2">
+                                <VerticalStackLayout Spacing="5">
+
+                                    <Image Source="{Binding ImageSource}" HeightRequest="110" Aspect="AspectFill" />
+
+                                    <Grid ColumnDefinitions="*, Auto" Margin="10,5,10,0">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold" FontSize="13"
+                                               LineBreakMode="TailTruncation"
+                                               TextColor="#333333" VerticalOptions="Center"/>
+                                        <HorizontalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                            <Label Text="{Binding Rating, StringFormat='{0:F1}'}"
+                                                   FontSize="11" TextColor="#4A5568" FontAttributes="Bold"/>
+                                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf005;', Color='#F6AD55', Size=10}" />
+                                        </HorizontalStackLayout>
+                                    </Grid>
+
+                                    <Label Text="{Binding Location}"
+                                           Margin="10,0,10,0" FontSize="10" TextColor="Gray" />
+
+                                    <!-- Bottom row: Read More + Heart -->
+                                    <Grid ColumnDefinitions="*, Auto" Margin="10,5,10,10">
+                                        <Label Text="Read More"
+                                               TextColor="#4FD1C5" FontAttributes="Bold"
+                                               FontSize="11" VerticalOptions="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnReadMoreTapped"
+                                                                      CommandParameter="{Binding .}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+
+                                        <Button Grid.Column="1"
+                                                Text="&#xf004;"
+                                                FontFamily="FASolid"
+                                                FontSize="18"
+                                                TextColor="{Binding HeartColor}"
+                                                BackgroundColor="Transparent"
+                                                BorderWidth="0"
+                                                Padding="0"
+                                                WidthRequest="36"
+                                                HeightRequest="36"
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="End"
+                                                Clicked="OnFavoriteTapped"
+                                                CommandParameter="{Binding .}" />
+                                    </Grid>
+
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- ─── Detail Popup Overlay ─────────────────────────────────── -->
+        <Grid x:Name="DetailOverlay"
+              IsVisible="False"
+              BackgroundColor="#80000000">
+            <Frame x:Name="DetailCard"
+       Margin="20"
+       Padding="0"
+       CornerRadius="16"
+       HasShadow="True"
+       BorderColor="Transparent"
+       BackgroundColor="White"
+       VerticalOptions="Center">
+                <VerticalStackLayout Spacing="0">
+
+                    <!-- Photo with X button overlaid -->
+                    <Grid>
+                        <Image x:Name="DetailImage"
+                   HeightRequest="200"
+                   Aspect="AspectFill" />
+
+                        <!-- ✅ X button overlaid on top-right of photo -->
+                        <Button Text="&#xf00d;"
+                    FontFamily="FASolid"
+                    FontSize="14"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    CornerRadius="20"
+                    WidthRequest="36"
+                    HeightRequest="36"
+                    Padding="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Margin="0,10,10,0"
+                    Clicked="OnDetailCloseTapped" />
+                    </Grid>
+
+                    <!-- Teal header bar with name -->
+                    <Grid BackgroundColor="#4DBBB7" Padding="15,10">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label x:Name="DetailName"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       VerticalOptions="Center"/>
+                            <Label x:Name="DetailLocation"
+                       Grid.Column="1"
+                       FontSize="12"
+                       TextColor="#D1FAF8"
+                       VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+
+                    <!-- Description -->
+                    <Label x:Name="DetailDescription"
+               Margin="15,12,15,15"
+               FontSize="13"
+               TextColor="#4A5568"
+               LineBreakMode="WordWrap"/>
+
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

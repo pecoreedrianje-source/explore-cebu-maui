@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CebuFinalApp.TipsPage"
+             BackgroundColor="#F4F9F8">
+
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- ─── Hero Banner ──────────────────────────────────── -->
+            <Grid HeightRequest="180" BackgroundColor="#4DBBB7">
+                <Ellipse Fill="#38A89D" WidthRequest="180" HeightRequest="180"
+                         HorizontalOptions="End" VerticalOptions="Start"
+                         Margin="0,-60,-40,0" Opacity="0.5"/>
+                <Ellipse Fill="#81E6D9" WidthRequest="100" HeightRequest="100"
+                         HorizontalOptions="Start" VerticalOptions="End"
+                         Margin="-20,0,0,20" Opacity="0.3"/>
+                <VerticalStackLayout VerticalOptions="Center"
+                                     HorizontalOptions="Start"
+                                     Margin="25,0" Spacing="6">
+                    <Label Text="Your Cebu Travel Guide"
+                           FontSize="22" FontAttributes="Bold"
+                           TextColor="White" />
+                    <Label Text="Tips, tricks and local knowledge"
+                           FontSize="13" TextColor="#D1FAF8" />
+                    <HorizontalStackLayout Spacing="6" Margin="0,4,0,0">
+                        <Frame BackgroundColor="#FFFFFF30" BorderColor="Transparent"
+                               CornerRadius="20" Padding="10,5" HasShadow="False">
+                            <Label Text="🌴 Updated 2025" FontSize="11" TextColor="Black" />
+                        </Frame>
+                        <Frame BackgroundColor="#FFFFFF30" BorderColor="Transparent"
+                               CornerRadius="20" Padding="10,5" HasShadow="False">
+                            <Label Text="📍 Cebu, PH" FontSize="11" TextColor="Black" />
+                        </Frame>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!-- ─── Section: Planning ────────────────────────── -->
+                <Label Text="📅  Planning Your Trip"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <!-- Best Time to Visit -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#E6FFFA" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf185;', Color='#4DBBB7', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Best Time to Visit" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="🌞 Dry Season (Nov–May): " FontAttributes="Bold" TextColor="#4DBBB7"/>
+                                        <Span Text="Perfect for beaches and island hopping.&#10;"/>
+                                        <Span Text="🌧️ Wet Season (Jun–Oct): " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Fewer tourists, lower rates — but expect rain."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Festivals -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FFF5F5" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf5c8;', Color='#E53E3E', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Festivals &amp; Events" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="🎉 Sinulog Festival " FontAttributes="Bold" TextColor="#E53E3E"/>
+                                        <Span Text="(3rd Sunday of January) is Cebu's biggest street party — book hotels months in advance!&#10;"/>
+                                        <Span Text="🌊 Kadaugan sa Mactan " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="(April 27) reenacts the Battle of Mactan."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Budget -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FFFFF0" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf0d6;', Color='#ECC94B', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Budget Guide" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="💰 Budget: " FontAttributes="Bold" TextColor="#ECC94B"/>
+                                        <Span Text="₱1,500–₱2,500/day (hostels + local food)&#10;"/>
+                                        <Span Text="💳 Mid-range: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="₱3,000–₱6,000/day (hotels + restaurants)&#10;"/>
+                                        <Span Text="✨ Luxury: " FontAttributes="Bold" TextColor="#9F7AEA"/>
+                                        <Span Text="₱8,000+/day (resorts + fine dining)"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- ─── Section: Getting Around ──────────────────── -->
+                <Label Text="🚌  Getting Around"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <!-- Transportation -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#EBF8FF" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf207;', Color='#4299E1', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Transportation Options" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="🚗 Grab: " FontAttributes="Bold" TextColor="#4299E1"/>
+                                        <Span Text="Safest and most convenient.&#10;"/>
+                                        <Span Text="🚌 Jeepney: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="₱13 flat rate — authentic local experience.&#10;"/>
+                                        <Span Text="🏍️ Habal-Habal: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Motorbike taxi, great for narrow roads.&#10;"/>
+                                        <Span Text="🚕 V-Hire: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Shared vans for longer city routes."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Airport Tips -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FAF5FF" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf072;', Color='#9F7AEA', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Airport Tips" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="✈️ Mactan-Cebu International Airport " FontAttributes="Bold" TextColor="#9F7AEA"/>
+                                        <Span Text="has two terminals. Terminal 2 serves international flights.&#10;"/>
+                                        <Span Text="⏰ " FontAttributes="Bold"/>
+                                        <Span Text="Arrive 3 hours early for international flights.&#10;"/>
+                                        <Span Text="📶 " FontAttributes="Bold"/>
+                                        <Span Text="Grab a Globe or Smart SIM at the arrival hall for fast mobile data."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- ─── Section: Food & Culture ──────────────────── -->
+                <Label Text="🍽️  Food &amp; Culture"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <!-- Must Try Food -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FFF5F5" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf2e7;', Color='#F6AD55', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Must-Try Cebu Food" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="🐷 Lechon Cebu: " FontAttributes="Bold" TextColor="#F6AD55"/>
+                                        <Span Text="The best roasted pig in the Philippines.&#10;"/>
+                                        <Span Text="🦐 Sutukil: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Fresh seafood cooked 3 ways — a local staple.&#10;"/>
+                                        <Span Text="🍢 Puso: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Hanging rice wrapped in coconut leaves.&#10;"/>
+                                        <Span Text="🥭 Dried Mango: " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="Best pasalubong from Cebu!"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Culture -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#F0FFF4" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf57d;', Color='#48BB78', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Culture &amp; Etiquette" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="🙏 Po &amp; Opo: " FontAttributes="Bold" TextColor="#48BB78"/>
+                                        <Span Text="Use these with elders as a sign of respect.&#10;"/>
+                                        <Span Text="👕 Dress modestly " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="when visiting churches and religious sites.&#10;"/>
+                                        <Span Text="😊 Filipinos are friendly — " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="don't hesitate to ask locals for directions!"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- ─── Section: Safety & Health ─────────────────── -->
+                <Label Text="🛡️  Safety &amp; Health"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <!-- Health -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FFF5F5" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf0fa;', Color='#E53E3E', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Health Tips" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="💧 Drink bottled water only " FontAttributes="Bold" TextColor="#E53E3E"/>
+                                        <Span Text="— tap water is not safe.&#10;"/>
+                                        <Span Text="☀️ Use SPF 50+ sunscreen " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="— the tropical sun is intense.&#10;"/>
+                                        <Span Text="🦟 Bring insect repellent " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="for outdoor and evening activities.&#10;"/>
+                                        <Span Text="🏥 Chong Hua Hospital " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="is the top medical facility in Cebu City."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Safety -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#FFFFF0" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf071;', Color='#ECC94B', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="Safety Reminders" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="👜 Keep bags in front " FontAttributes="Bold" TextColor="#ECC94B"/>
+                                        <Span Text="in crowded markets and jeepneys.&#10;"/>
+                                        <Span Text="🌊 Always check ocean conditions " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="before swimming.&#10;"/>
+                                        <Span Text="📵 Avoid displaying " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="expensive gadgets in public.&#10;"/>
+                                        <Span Text="🆘 Emergency: " FontAttributes="Bold" TextColor="#E53E3E"/>
+                                        <Span Text="Police 117 | Ambulance 161"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- ─── Section: Connectivity ─────────────────────── -->
+                <Label Text="📶  Staying Connected"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <!-- SIM & Internet -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <Grid ColumnDefinitions="50, *" ColumnSpacing="14">
+                        <Frame Grid.Column="0" HeightRequest="48" WidthRequest="48"
+                               CornerRadius="14" Padding="0" HasShadow="False"
+                               BackgroundColor="#EBF8FF" BorderColor="Transparent">
+                            <Image Source="{FontImageSource FontFamily=FASolid, Glyph='&#xf1eb;', Color='#4299E1', Size=22}"
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                            <Label Text="SIM &amp; Internet" FontAttributes="Bold"
+                                   FontSize="14" TextColor="#2D3748"/>
+                            <Label FontSize="12" TextColor="#718096">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="📱 Globe &amp; Smart " FontAttributes="Bold" TextColor="#4299E1"/>
+                                        <Span Text="are the best networks in Cebu.&#10;"/>
+                                        <Span Text="💵 ₱299–₱599 " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="gets you 7–30 days of data.&#10;"/>
+                                        <Span Text="☕ Free WiFi " FontAttributes="Bold" TextColor="#718096"/>
+                                        <Span Text="available at SM malls, Ayala, and most cafes."/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- ─── Section: Useful Apps ──────────────────────── -->
+                <Label Text="📱  Useful Apps"
+                       FontSize="16" FontAttributes="Bold"
+                       TextColor="#2D3748" Margin="0,5,0,0"/>
+
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="White">
+                    <VerticalStackLayout Spacing="12">
+
+                        <Grid ColumnDefinitions="36, *" ColumnSpacing="12">
+                            <Frame Grid.Column="0" WidthRequest="36" HeightRequest="36"
+                                   CornerRadius="10" Padding="0" HasShadow="False"
+                                   BackgroundColor="#E6FFFA" BorderColor="Transparent">
+                                <Label Text="🚗" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Grab" FontAttributes="Bold" FontSize="13" TextColor="#2D3748"/>
+                                <Label Text="Ride-hailing and food delivery" FontSize="11" TextColor="#A0AEC0"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView Color="#F0F0F0" HeightRequest="1"/>
+
+                        <Grid ColumnDefinitions="36, *" ColumnSpacing="12">
+                            <Frame Grid.Column="0" WidthRequest="36" HeightRequest="36"
+                                   CornerRadius="10" Padding="0" HasShadow="False"
+                                   BackgroundColor="#EBF8FF" BorderColor="Transparent">
+                                <Label Text="🗺️" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Google Maps" FontAttributes="Bold" FontSize="13" TextColor="#2D3748"/>
+                                <Label Text="Offline maps work great in Cebu" FontSize="11" TextColor="#A0AEC0"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView Color="#F0F0F0" HeightRequest="1"/>
+
+                        <Grid ColumnDefinitions="36, *" ColumnSpacing="12">
+                            <Frame Grid.Column="0" WidthRequest="36" HeightRequest="36"
+                                   CornerRadius="10" Padding="0" HasShadow="False"
+                                   BackgroundColor="#FFFFF0" BorderColor="Transparent">
+                                <Label Text="💱" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                                <Label Text="XE Currency" FontAttributes="Bold" FontSize="13" TextColor="#2D3748"/>
+                                <Label Text="Real-time PHP exchange rates" FontSize="11" TextColor="#A0AEC0"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView Color="#F0F0F0" HeightRequest="1"/>
+
+                        <Grid ColumnDefinitions="36, *" ColumnSpacing="12">
+                            <Frame Grid.Column="0" WidthRequest="36" HeightRequest="36"
+                                   CornerRadius="10" Padding="0" HasShadow="False"
+                                   BackgroundColor="#FFF5F5" BorderColor="Transparent">
+                                <Label Text="🌤️" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Weather App" FontAttributes="Bold" FontSize="13" TextColor="#2D3748"/>
+                                <Label Text="PAGASA for local typhoon updates" FontSize="11" TextColor="#A0AEC0"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- ─── Emergency Numbers ─────────────────────────── -->
+                <Frame CornerRadius="16" Padding="16" HasShadow="False"
+                       BorderColor="Transparent" BackgroundColor="#FFF5F5"
+                       Margin="0,5,0,20">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="🆘  Emergency Numbers"
+                               FontSize="15" FontAttributes="Bold" TextColor="#E53E3E"/>
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+                            <Frame Grid.Row="0" Grid.Column="0" CornerRadius="10" Padding="10,8"
+                                   HasShadow="False" BorderColor="Transparent" BackgroundColor="White">
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="🚔 Police" FontSize="12" FontAttributes="Bold" TextColor="#2D3748"/>
+                                    <Label Text="117" FontSize="18" FontAttributes="Bold" TextColor="#E53E3E"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1" CornerRadius="10" Padding="10,8"
+                                   HasShadow="False" BorderColor="Transparent" BackgroundColor="White">
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="🚑 Ambulance" FontSize="12" FontAttributes="Bold" TextColor="#2D3748"/>
+                                    <Label Text="161" FontSize="18" FontAttributes="Bold" TextColor="#E53E3E"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="0" CornerRadius="10" Padding="10,8"
+                                   HasShadow="False" BorderColor="Transparent" BackgroundColor="White">
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="🚒 Fire" FontSize="12" FontAttributes="Bold" TextColor="#2D3748"/>
+                                    <Label Text="160" FontSize="18" FontAttributes="Bold" TextColor="#E53E3E"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1" CornerRadius="10" Padding="10,8"
+                                   HasShadow="False" BorderColor="Transparent" BackgroundColor="White">
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="🏥 Chong Hua" FontSize="12" FontAttributes="Bold" TextColor="#2D3748"/>
+                                    <Label Text="255-8000" FontSize="16" FontAttributes="Bold" TextColor="#E53E3E"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="10" Padding="10,8"
+                                   HasShadow="False" BorderColor="Transparent" BackgroundColor="White">
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="🇵🇭 National Emergency Hotline" FontSize="12" FontAttributes="Bold" TextColor="#2D3748"/>
+                                    <Label Text="911" FontSize="18" FontAttributes="Bold" TextColor="#E53E3E"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

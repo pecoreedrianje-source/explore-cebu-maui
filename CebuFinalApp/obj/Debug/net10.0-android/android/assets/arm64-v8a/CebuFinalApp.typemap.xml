@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="CebuFinalApp" mvid="0fde0422bee7442980fe0d49457df813">
+  <java-to-managed>
+    <entry java-name="crc64c7ebd8d2e6860555/MainActivity" managed-name="CebuFinalApp.MainActivity, CebuFinalApp" managed-type-token-id="33554463" />
+    <entry java-name="crc64c7ebd8d2e6860555/MainApplication" managed-name="CebuFinalApp.MainApplication, CebuFinalApp" managed-type-token-id="33554464" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64c7ebd8d2e6860555/MainActivity" managed-name="CebuFinalApp.MainActivity, CebuFinalApp" managed-type-token-id="33554463" />
+    <entry java-name="crc64c7ebd8d2e6860555/MainApplication" managed-name="CebuFinalApp.MainApplication, CebuFinalApp" managed-type-token-id="33554464" />
+  </managed-to-java>
+</api>
