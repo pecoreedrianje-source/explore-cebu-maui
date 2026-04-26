@@ -4,6 +4,11 @@ on: [push]
 jobs:
   build:
     runs-on: windows-latest
+    # This forces GitHub to 'stay' in the folder where your code is
+    defaults:
+      run:
+        working-directory: CebuFinalApp 
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -17,15 +22,14 @@ jobs:
         run: dotnet workload install maui
 
       - name: Restore Dependencies
-        # Removed the 'explore-cebu-maui/' prefix
-        run: dotnet restore CebuFinalApp/CebuFinalApp.csproj
+        run: dotnet restore CebuFinalApp.csproj
 
       - name: Build and Publish APK
-        # Removed the prefix here too and kept the support bypass
-        run: dotnet publish CebuFinalApp/CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
+        run: dotnet publish CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ExploreCebu-Android-Build
-          path: CebuFinalApp/bin/Release/net8.0-android/*-Signed.apk
+          # This path is relative to the working-directory
+          path: bin/Release/net8.0-android/*-Signed.apk
