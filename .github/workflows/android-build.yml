@@ -1,7 +1,5 @@
 name: Build Android APK
-on:
-  push:
-    branches: [ main ] # Runs every time you push to main
+on: [push]
 
 jobs:
   build:
@@ -18,12 +16,15 @@ jobs:
       - name: Install MAUI Workload
         run: dotnet workload install maui
 
-      - name: Build APK
-        run: dotnet publish -f net8.0-android -c Release
+      - name: Restore Dependencies
+        run: dotnet restore explore-cebu-maui/CebuFinalApp/CebuFinalApp.csproj
 
-      - name: Upload APK to Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Build and Publish APK
+        # Added /p:CheckEolWorkloads=false to bypass the "out of support" error
+        run: dotnet publish explore-cebu-maui/CebuFinalApp/CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            **/*.apk
+          name: ExploreCebu-Android-Build
+          path: explore-cebu-maui/CebuFinalApp/bin/Release/net8.0-android/*-Signed.apk
