@@ -17,14 +17,15 @@ jobs:
         run: dotnet workload install maui
 
       - name: Restore Dependencies
-        run: dotnet restore explore-cebu-maui/CebuFinalApp/CebuFinalApp.csproj
+        # Removed the 'explore-cebu-maui/' prefix
+        run: dotnet restore CebuFinalApp/CebuFinalApp.csproj
 
       - name: Build and Publish APK
-        # Added /p:CheckEolWorkloads=false to bypass the "out of support" error
-        run: dotnet publish explore-cebu-maui/CebuFinalApp/CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
+        # Removed the prefix here too and kept the support bypass
+        run: dotnet publish CebuFinalApp/CebuFinalApp.csproj -f net8.0-android -c Release /p:CheckEolWorkloads=false
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ExploreCebu-Android-Build
-          path: explore-cebu-maui/CebuFinalApp/bin/Release/net8.0-android/*-Signed.apk
+          path: CebuFinalApp/bin/Release/net8.0-android/*-Signed.apk
